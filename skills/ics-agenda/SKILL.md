@@ -1,7 +1,7 @@
 ---
 name: ics-agenda
 description: Read-only agenda, free slots and conflicts from ICS feeds
-version: 1.0.0
+version: 1.0.1
 author: ics-agenda contributors
 license: MIT
 platforms: [macos, linux]
