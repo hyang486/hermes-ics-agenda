@@ -1,0 +1,25 @@
+# Fresh Hermes install transcript — 2026-11-16T06:16:47Z
+# HERMES_HOME=<fresh empty temp dir>
+$ hermes --version
+Hermes Agent v0.22.7 (2026.9.24) · stable · local b200f5bc60e3
+$ ls $HERMES_HOME/skills (before)
+$ hermes skills tap add hyang486/hermes-ics-agenda
+Added tap: hyang486/hermes-ics-agenda
+
+$ hermes skills install hyang486/hermes-ics-agenda/ics-agenda
+
+Decision: BLOCKED — Blocked (community source + dangerous verdict, 3 findings). 
+--force does not override a dangerous verdict.
+Scan provenance: fresh; scanner skills-guard-v10; hash 
+sha256:ed5d43103ec6e0629f89613e871e1cc651ed1dd2970f9d045a4830ecb176432e
+Source: 
+https://github.com/hyang486/hermes-ics-agenda/tree/aa7e107ea88feb7f88e1f2b773786
+68023ee5a4f/skills/ics-agenda; scanned 2026-11-16T06:17:05.715812+00:00; rules: 
+hex_encoded_string, invisible_unicode, prompt_injection_ignore
+
+Not installed: the security scan found 3 high-risk pattern(s) in 
+'hyang486/hermes-ics-agenda/ics-agenda' (listed above). Hermes never installs 
+unverified skills with high-risk findings, even with --force. Review the 
+findings or ask the author to fix them; to read the skill without installing, 
+run `hermes skills inspect hyang486/hermes-ics-agenda/ics-agenda`.
+$ hermes skills list | grep ics-agenda

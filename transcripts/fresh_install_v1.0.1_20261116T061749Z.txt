@@ -1,0 +1,53 @@
+# Fresh Hermes install transcript — 2026-11-16T06:17:49Z
+# repo: https://github.com/hyang486/hermes-ics-agenda  commit: 99e0e6e481d221cc97ed21729bfe2f4eec672d30  tag: v1.0.1
+# HERMES_HOME = new empty temp dir (no prior skills/taps)
+
+$ hermes --version
+Hermes Agent v0.22.7 (2026.9.24) · stable · local b200f5bc60e3
+
+$ hermes skills tap add hyang486/hermes-ics-agenda
+Added tap: hyang486/hermes-ics-agenda
+
+
+$ hermes skills install hyang486/hermes-ics-agenda/ics-agenda
+│ You are installing a third-party skill at your own risk.                     │
+│                                                                              │
+│ External skills can contain instructions that influence agent behavior,      │
+│ shell commands, and scripts. Even after automated scanning, you should       │
+│ review the installed files before use.                                       │
+│                                                                              │
+│ Files will be at: $HERMES_HOME/skills/ics-agenda/                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Install 'ics-agenda'?
+Confirm [y/N]: Installed: ics-agenda
+Files: SKILL.md, assets/sample.ics, scripts/ics_agenda.py
+
+
+$ hermes skills list | grep ics-agenda
+│ ics-agenda │          │ skills.sh │ community │ enabled │
+
+$ python3 $SKILL_DIR/scripts/ics_agenda.py --source $SKILL_DIR/assets/sample.ics --now 2026-11-16T08:00:00 agenda --days 3
+Agenda: next 3 day(s) from 2026-11-16 08:00 (America/Los_Angeles)
+Mon 2026-11-16
+  09:30-09:45  Daily standup @ Room 101
+  10:00-11:00  Team sync @ Video call
+  10:30-11:30  Advisor meeting
+  15:00-16:30  Workshop
+  16:30-17:00  Pairing session
+Tue 2026-11-17
+  07:00-08:00  Gym
+  12:00-13:00  Lunch; with Sam, Alex @ Cafe, 2nd floor
+  14:00-15:00  Optional focus block [free]
+Wed 2026-11-18
+  07:00-08:00  Gym
+Thu 2026-11-19
+  all day      Example Conference (through Fri 2026-11-20)
+  07:00-08:00  Gym
+
+$ ... free --date 2026-11-18 --min 45
+Free slots on Wed 2026-11-18 between 09:00 and 18:00 (>= 45 min, America/Los_Angeles):
+  09:00-18:00  (9h00m)
+
+$ ... conflicts --days 7
+Conflicts in the next 7 day(s) (America/Los_Angeles):
+  Mon 2026-11-16 10:30-11:00  "Team sync" (10:00-11:00) overlaps "Advisor meeting" (10:30-11:30)
