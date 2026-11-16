@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+*.local.ics
+.env
+# raw transcripts from local runs (commit curated ones explicitly with -f)
+transcripts/*.raw.log
