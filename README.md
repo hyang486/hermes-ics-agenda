@@ -18,8 +18,8 @@ multi-day events, `RRULE` (`DAILY`/`WEEKLY` with `INTERVAL`, `COUNT`, `UNTIL`,
 This repository is a tap: skills live under `skills/<slug>/SKILL.md`.
 
 ```bash
-hermes skills tap add <owner>/<repo>
-hermes skills install <owner>/<repo>/ics-agenda
+hermes skills tap add hyang486/hermes-ics-agenda
+hermes skills install hyang486/hermes-ics-agenda/ics-agenda
 ```
 
 Pin a version by installing from a tagged release or commit of this repo. See
@@ -61,7 +61,7 @@ python3 skills/ics-agenda/scripts/ics_agenda.py free --date 2026-11-16 --min 30 
 
 ```bash
 python3 -m unittest discover -s tests       # 27 tests, stdlib only
-OWNER_REPO=<owner>/<repo> scripts/fresh_install_test.sh   # fresh Hermes install + transcript
+OWNER_REPO=hyang486/hermes-ics-agenda scripts/fresh_install_test.sh   # fresh Hermes install + transcript
 ```
 
 `scripts/fresh_install_test.sh` creates a throwaway `HERMES_HOME` under
